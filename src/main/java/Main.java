@@ -21,6 +21,13 @@ public class Main {
             return new FreeMarkerEngine().render(new ModelAndView(paramet,"listar.fml"));
         }));
 
+        get("/read/:matricula",((request, response) -> {
+            Estudiante estudiante = ControladorLista.getInstance().getEstudiante(Integer.parseInt(request.params("matricula")));
+            Map<String,Object> paramet = new HashMap<>();
+            paramet.put("estudiante", estudiante);
+            return new FreeMarkerEngine().render(new ModelAndView(paramet,"ver.fml"));
+        }));
+
         get("/create",((request, response) -> {
             return new FreeMarkerEngine().render(new ModelAndView(null,"registrar.fml"));
         }));
@@ -47,9 +54,9 @@ public class Main {
             return null;
         }));
 
-        get("/delete/:matricula", (request, response) -> {
+        post("/delete/:matricula", (request, response) -> {
             ControladorLista.getInstance().deleteEstudiante(Integer.parseInt(request.params(":matricula")));
-            response.redirect("/",200);
+            response.redirect("/",303);
             return null;
         });
 
