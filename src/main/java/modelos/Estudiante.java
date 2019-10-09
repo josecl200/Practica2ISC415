@@ -1,4 +1,4 @@
-package logico;
+package modelos;
 
 public class Estudiante {
     private int matricula;

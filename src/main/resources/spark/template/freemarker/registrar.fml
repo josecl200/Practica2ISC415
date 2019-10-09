@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es_do">
+<head>
+    <meta charset="UTF-8">
+    <title>CRUD Programación Web | Create</title>
+    <script src="https://use.fontawesome.com/960c24c7f2.js"></script>
+</head>
+<body>
+<header>
+    <h1>Primer CRUD Programación Web | ISC-415</h1>
+</header>
+<nav>
+    <a href="/">Página Principal</a>
+    <a href="/create">Nuevo Estudiante</a>
+</nav>
+<main>
+    <h3>
+        <#if modificar??>
+            Modificación de estudiante de estudiantes
+        <#else>
+            Registro de estudiantes
+        </#if>
+    </h3>
+    <#if modificar??>
+    <form action="/update" method="POST">
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" name="nombre" value="${estudiante.nombre}"/>
+
+        <label for="apellido">Apellido</label>
+        <input type="text" id="apellido" name="apellido" value="${estudiante.apellido}"/>
+
+        <label for="matricula">Matricula</label>
+        <input type="text" id="matricula" name="matricula" value="${estudiante.matricula}"/>
+
+        <label for="telefono">Telefono</label>
+        <input type="text" id="telefono" name="telefono" value="${estudiante.telefono}"/>
+
+        <input type="submit" value="Submit"/>
+    </form>
+    <#else>
+    <form action="/create" method="POST">
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" name="nombre" />
+
+        <label for="apellido">Apellido</label>
+        <input type="text" id="apellido" name="apellido" />
+
+        <label for="matricula">Matricula</label>
+        <input type="text" id="matricula" name="matricula" />
+
+        <label for="telefono">Telefono</label>
+        <input type="text" id="telefono" name="telefono" />
+
+        <input type="submit" value="Submit"/>
+    </form>
+    </#if>
+
+</main>
+</body>
+</html>

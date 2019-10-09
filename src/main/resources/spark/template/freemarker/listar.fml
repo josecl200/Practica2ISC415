@@ -31,7 +31,7 @@
                     <tbody>
                         <#list estudiantes as est>
                             <tr>
-                                <td><a href="/read/${est.matricula}"><i class="fas fa-user-edit">Editar</i> </a>  <a href="/modify/${est.matricula}"><i class="fas fa-filek"></i> </a></td>
+                                <td><a href="/read/${est.matricula}"><i class="fas fa-user-edit"></i> </a>  <a href="/modify/${est.matricula}"><i class="fas fa-filek"></i> </a></td>
                                 <td>${est.matricula}</td>
                                 <td>${est.nombre}</td>
                                 <td>${est.apellido}</td>
