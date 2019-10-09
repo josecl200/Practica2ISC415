@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es_do">
+    <head>
+        <meta charset="UTF-8">
+        <title>CRUD Programación Web | Read General</title>
+        <script src="https://use.fontawesome.com/960c24c7f2.js"></script>
+    </head>
+    <body>
+        <header>
+            <h1>Primer CRUD Programación Web | ISC-415</h1>
+        </header>
+        <nav>
+            <a href="/">Página Principal</a>
+            <a href="/create">Nuevo Estudiante</a>
+
+        </nav>
+        <main>
+            <h3>Listado de estudiantes</h3>
+            <br/><br/>
+            <#if estudiantes?size != 0>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>&nbsp;&nbsp;</th>
+                            <th>Matricula</th>
+                            <th>Nombre</th>
+                            <th>Apellido</th>
+                            <th>Num. Telefonico</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <#list estudiantes as est>
+                            <tr>
+                                <td><a href="/read/${est.matricula}"><i class="fas fa-user-edit">Editar</i> </a>  <a href="/modify/${est.matricula}"><i class="fas fa-filek"></i> </a></td>
+                                <td>${est.matricula}</td>
+                                <td>${est.nombre}</td>
+                                <td>${est.apellido}</td>
+                                <td>${est.telefono}</td>
+                            </tr>
+                        </#list>
+                    </tbody>
+                </table>
+            <#else>
+                <article>
+                    <p>
+                        No hay estudiantes registrados.
+                    </p>
+                </article>
+            </#if>
+        </main>
+    </body>
+</html>
