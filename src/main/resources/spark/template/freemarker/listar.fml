@@ -5,22 +5,22 @@
         <title>CRUD Programación Web | Read General</title>
         <link href="/css/font-awesome-4.7.0/css/font-awesome.css" type="text/css" rel="stylesheet" />
         <link href="/css/bootstrap-4.3.1-dist/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <link href="/css/extra.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
         <header>
             <h1>Primer CRUD Programación Web | ISC-415</h1>
         </header>
-        <nav>
-            <a href="/">Página Principal</a>
-            <a href="/create">Nuevo Estudiante</a>
-
+        <nav class="navbar navbar-light bg-light">
+            <a class="nav-item" href="/">Página Principal</a>
+            <a class="nav-item" href="/create">Nuevo Estudiante</a>
         </nav>
         <main>
             <h3>Listado de estudiantes</h3>
             <br/><br/>
             <#if estudiantes?size != 0>
-                <table>
-                    <thead>
+                <table class="table">
+                    <thead class="thead-dark">
                         <tr>
                             <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;</th>
                             <th>Matricula</th>
