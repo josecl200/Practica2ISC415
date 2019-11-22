@@ -1,10 +1,14 @@
 plugins {
     id 'java'
+    id 'application'
+    id 'com.github.johnrengelman.shadow' version '4.0.4'
 }
 
 version '1.0-SNAPSHOT'
 
 sourceCompatibility = 1.8
+
+mainClassName = 'Main'
 
 repositories {
     mavenCentral()
@@ -25,4 +29,14 @@ dependencies {
     //compile 'org.webjars:bootstrap:3.3.6', //existe un bug que no permite varias rutas, están metiendo mano.
     compile "org.slf4j:slf4j-simple:1.7.21"
     compile group: 'org.jsoup', name: 'jsoup', version: '1.11.3'
+}
+
+shadowJar {
+    baseName = 'Practica2ISC415-20160138'
+    classifier = null
+    version = null
+}
+
+task stage {
+    dependsOn shadowJar
 }

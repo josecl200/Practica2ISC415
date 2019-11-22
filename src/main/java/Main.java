@@ -12,7 +12,14 @@ public class Main {
 
     public static void main(String[] args){
         //Esta aplicación web correrá en el puerto 8080, cambiar de ser necesario.
-        port(8080);
+        ProcessBuilder processBuilder = new ProcessBuilder();
+        if (processBuilder.environment().get("PORT") != null) {
+            port(Integer.parseInt(processBuilder.environment().get("PORT")));
+        }else{
+            port(8080);
+        }
+
+
         staticFiles.location("/publico");
         get("/",((request, response) -> {
             ArrayList<Estudiante> estudiantes = ControladorLista.getInstance().getListaEstudiantes();
