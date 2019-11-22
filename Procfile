@@ -1,0 +1,1 @@
+web: java -jar build/libs/Practica2ISC415-20160138.jar
